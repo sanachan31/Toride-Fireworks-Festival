@@ -1,0 +1,639 @@
+@charset "utf-8";
+
+/* ===Cruise 全体  Toride Fireworks Festival ==== */
+/* #region top */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  color: #fff;
+  font-size: 0.875rem;
+  margin: 0px;
+  padding: 0px;
+  font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+}
+@font-face {
+  font-family: "kokumincho";
+  src: url('./font/kokumincho.woff') format('woff');
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+h1, h2, h3 {
+  line-height: 1;
+  font-weight: normal;
+}
+nav, ul, li {
+  list-style: none;
+}
+.wrap-inner {    /*===4セクションを包む===*/
+  background-color: #111;
+}
+.section-title {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+}
+/* #endregion top */
+
+/*=====Cruiseヘッダー============================*/
+/* #region header */
+#header {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  position: relative;
+  writing-mode: vertical-rl;
+}
+.header-nav {
+  background-color: #555;
+  font-size: 1.4rem;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: -100%;
+  z-index: 100;
+  width: 35vw;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.header-nav ul {
+  padding: 20px 30px;
+}
+.header-nav ul li {
+  padding: 1.5vw 1.5vw 1vw 1.5vw;
+}
+.header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+  font-size: 1.8rem;
+  transform: translateY(-10px);
+}
+.header-nav ul li a {
+  display: block;
+}
+.header-nav a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+/*=====PCハンバーガー部分↓↓=====*/
+#toggle {
+  display: none;
+}
+.header-btn {  
+  position: relative;
+  position: fixed;
+  top: 5%;
+  left: 3%;
+  z-index: 100;
+}
+.header-btn span {
+  display: inline-block;
+  height: 40px;  /*ハンバーガー幅*/
+  width: 50px;   /*ハンバーガー高*/
+}
+.header-btn span i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
+}
+.header-btn span i:nth-child(1) {
+  top: 0;
+}
+.header-btn span i:nth-child(2) {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+.header-btn span i:nth-child(3) {
+  bottom: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(1) { 
+  margin: auto;
+  transform: rotate(45deg);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(2) {
+  margin: auto;  
+  transform: rotateX(90deg);
+  top:0 ;
+  bottom: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(3) {
+  margin: auto;
+  transform: rotate(-45deg);
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/*=====PCハンバーガー部分↑↑=====*/
+#toggle:checked + .header-btn + .header-nav {
+  position: fixed;
+  z-index: 99;
+  opacity: 1;
+  display: block;  /*ナビの代わりに3本線を表示する*/
+}
+.reserve {
+  font-size: 1.6rem;
+  border: 1px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 18px 17px;
+  display: inline-block;
+  position: fixed;
+  bottom: 5%;
+  left: 3%;
+  z-index: 100;
+}
+.reserve {
+  display: block;
+}
+/* #endregion header */
+
+/*=====Cruiseトップイメージ======================*/
+/* #region */
+.top-image {
+  background: url(img/top-image-1.jpg ) no-repeat center center/cover;
+  width: 100%;
+}
+.top-image h1 {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+  font-size: 2.5rem;
+  display: block;
+  margin: 0 11% 0 auto;
+  padding: 80px 0;
+}
+/* #endregion */
+
+/*=====Cruiseチケット============================*/
+/* #region チケット */
+#ticket {
+  background : url(img/tour-5original.jpg ) no-repeat center center/cover;
+  width: 100%;
+}
+.ticket-outer {
+  background-color: rgba(51, 51, 51,0.8);
+  width: 100%;
+  padding: 150px 7%;
+}
+.ticket-content {
+  writing-mode: vertical-rl;
+  margin: 0 auto;
+}
+.ticket-inner1 .section-title {
+  font-size: 3rem;
+  white-space: nowrap;
+  padding-left: 40px;
+  margin: 0 0 0 auto;
+}
+.ticket-content dl {
+  font-size: 1.7rem;
+  line-height: 60px;
+  padding: 0 20px;
+  display: flex;
+}
+.ticket-content dt {
+  white-space: nowrap;
+}
+.ticket-inner1 dl:nth-child(3) {
+  padding-left: 0;
+}
+.ticket-inner1 dl:nth-child(4),
+.ticket-inner1 dl:nth-child(7),
+.ticket-inner2 dl:nth-child(4) {
+  padding-right: 0;
+}
+.ticket-content a{
+  box-sizing: content-box;
+  border: 1px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px 5px;
+  display: inline-block;
+} 
+/* #endregion チケット */
+
+/*======Cruiseフッター・お問い合わせ=============*/
+/* #region footer */
+#footer {
+  background-color: #222;
+  background: url(img/footer-1.jpg) no-repeat center center/cover;
+  width: 100vw;
+  padding: 0 7%;
+}
+#footer .footer-inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.footer-inquiry, .footer-text {
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  line-height: 50px;
+  padding-top: 120px;
+}
+#footer .footer-title {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  padding: 0 20px 0 30px;
+  font-size: 2.3rem;
+}
+.footer-inquiry p {
+  letter-spacing: 2px;
+}
+.footer-inquiry .form {
+  border: solid 1px #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 12px 3px;
+  margin: 150px 20px 0 20px;
+}
+.footer-inquiry .form a {
+  display: block;
+}
+#footer .form a:hover {
+  opacity: 0.6;
+}
+.footer-inquiry .logo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 80px 20px 20px 20px;
+}
+.footer-inquiry .logo li {
+  margin-bottom: 35px;
+}
+.footer-inquiry .logo li a:hover {
+  opacity: 0.6;
+}
+.footer-text {
+  margin-right: 50px;
+}
+.footer-text dl {
+  display: flex;
+  letter-spacing: 2px;
+}
+#footer .copylight p {
+  font-size: 0.625rem;
+  padding: 80px 0 30px 0;
+  display: block;
+  text-align: center;
+}
+.wrap {
+  overflow: hidden;
+}
+/* #endregion footer */
+.wrap {
+  overflow: hidden;
+}
+/*============================================
+    Cruiseデバイス横１ 〜1536px
+=============================================*/
+@media (orientation: landscape) and (max-width: 1536px) {
+/*=====Cruise横１　ヘッダー========================*/
+  .header-nav {
+    width: 38%;
+  }
+  .reserve {
+    font-size: 1.4rem;
+  }
+ /*======Cruise横１　フッター=====================*/ 
+  #footer .footer-title {
+    font-size: 2rem;
+  }
+  .wrap {
+  overflow: hidden;
+  }
+}
+/*============================================
+    Cruiseデバイス横２ 〜1366px
+=============================================*/
+@media (orientation: landscape) and (max-width: 1366px) {
+/*=====Cruise横２　ヘッダー========================*/
+.header-nav {
+  font-size: 1.3rem;
+}
+.header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+  font-size: 1.5rem;
+}
+/*=====Cruiseトップイメージ===========================*/
+  .top-image p {
+    font-size: 2rem;
+  }
+/*=====Cruise横２　チケット1366px=====================*/
+  .ticket-inner1 .section-title {
+    font-size: 2rem;
+  }
+  .ticket-content dl {
+    font-size: 1.2rem;
+    line-height: 50px;
+  }
+  .ticket-content dl:nth-child(11) {
+    padding-left: 0;
+  }
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*=========================================
+     Cruise SP1  iPad pro 〜1024px
+==========================================*/
+@media screen and (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+/*=====Cruise SP1 ヘッダー======================*/
+  #header .header-btn {
+    top: 7%;
+    left: 5%;
+    z-index: 100;
+  }
+  .header-nav {
+    font-size: 1.2rem;
+    width: 50vw;
+  }
+  .header-nav ul li {
+    padding: 1.8vw 1.8vw 1.2vw 1.8vw;
+  } 
+  .header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+    font-size: 1.4rem;
+  }
+  .header-btn span {
+    display: inline-block;
+    height: 40px;  /*ハンバーガー幅*/
+    width: 40px;   /*ハンバーガー高*/
+  }
+  .reserve {
+    font-size: 1.4rem;
+    padding: 15px 12px;
+  }
+/*=====Cruise SP1 トップイメージ===========================*/
+  .top-image h1 {
+    padding: 60px 0;
+  }
+  .top-image p {
+  font-size: 1.8rem;
+}
+  /*=====Cruise SP1 チケット=======================*/
+  .ticket-outer {
+    padding: 120px 0;
+  }
+  .ticket-inner1 .section-title {
+    font-size: 2rem;
+  }
+  .ticket-content dl {
+    font-size: 1.1rem;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+  .ticket-content dl:nth-child(11) {
+    padding-left: 0;
+  }
+/*=====Cruise SP1 フッター=======================*/
+  #footer .footer-title {
+    font-size: 2rem;
+  }
+  .footer-text {
+    margin-right: 10px;
+  }
+  /*======SP1  ↑===========================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*=========================================
+     Cruise SP2  iPad 〜834px
+==========================================*/
+@media screen and (max-width: 834px) {  
+/*=====Cruise SP2 ヘッダー=======================*/
+  .header-nav {
+    font-size: 1.2rem;
+    width: 60vw;
+  }
+  .header-nav ul {
+    padding: 15px 20px;
+  }
+  .header-nav ul li {
+    padding: 2vw 2vw 1.4vw 2vw;
+  }
+/*=====Cruise SP2 トップイメージ 834px===================*/
+  .top-image {
+    background-position: center left;
+  }
+  .top-image h1 {
+    font-size: 1.8rem;
+    margin-right: 15%;
+  }
+/*=====Cruise SP2 チケット=======================*/
+  .ticket-inner1 .section-title {
+    font-size: 1.8rem;
+  }
+  .ticket-content dl {
+    font-size: 1rem;
+    line-height: 30px;
+    padding: 0 10px;
+  }
+  .ticket-content dl:nth-child(11) {
+    padding-left: 0;
+  }
+/*======Cruise SP2  フッター 834px==================*/
+  #footer .footer-title {
+    font-size: 1.8rem;
+  }
+  #footer .footer-title {
+    padding-right: 10px;
+  } 
+  .footer-inquiry, .footer-text {
+    line-height: 40px;
+  }
+  .footer-text {
+    margin-right: 0;
+  }
+  /*======SP2  ↑ 834px=========================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*============================================
+    Cruise デバイス横３ iPad横〜1024px
+=============================================*/
+@media only screen and (min-device-width: 768px) and (max-device-width:1024px) and (orientation: landscape) {  
+/*=====Cruise横３ ヘッダー1024px=================*/   
+  .header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+    transform: translateY(-6px);
+  }
+/*=====Cruise横３　↑↑====================*/ 
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*=========================================
+   Cruise SP3  〜540px
+==========================================*/
+@media screen and (max-width: 540px) {  
+/*=====Cruise SP3 ヘッダー=======================*/
+  .header-nav {
+    font-size: 1rem;
+    width: 100vw;
+  }
+  .header-nav ul li {
+    padding: 3.8vw 3.8vw 3.3vw 3.8vw;
+  }
+  .header-btn {
+    top: 7%;
+    left: 5%;
+  }
+  .header-btn span {
+    display: inline-block;
+    height: 30px;  /*ハンバーガー幅*/
+    width: 30px;   /*ハンバーガー高*/
+  }
+  .reserve {
+    display: none;
+  }
+/*=====Cruise SP3 トップイメージ===================*/
+.top-image h1 {
+  font-size: 1.5rem;
+  margin-right: 15%;
+  padding: 40px 0;
+}
+/*=====Cruise SP3 チケット540px=======================*/
+.ticket-outer {
+  padding: 80px 0;
+}
+.ticket-inner1 .section-title {
+  font-size: 1.5rem;
+  padding: 0 10px 0 30px;
+}
+.ticket-content {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.ticket-inner1, .ticket-inner2 {
+  padding: 0 20px;
+}
+.ticket-inner2 {
+  margin-top: 80px;
+}
+.ticket-content dl {
+  padding: 0 10px;
+}
+.ticket-inner2 dl:nth-child(1) {
+  padding-right: 25px;
+}
+.ticket-inner2 dl:nth-child(4) {
+  padding-left: 0;
+}
+/*======Cruise SP3 フッター・お問い合わせ540px========*/
+  #footer .footer-inner {
+  flex-direction: column;
+  }
+  #footer .footer-title {
+  font-size: 1.6rem;
+  padding: 0 10px 0 20px;
+  }
+  .footer-inquiry, .footer-text {
+    padding-top: 60px;
+  }
+  #footer .footer-inquiry .form {
+  margin: 95px 10px 0 0;
+  }
+  .footer-inquiry .logo {
+  margin: 80px 20px 0 0;
+  }
+  .footer-inquiry .logo li:last-child {
+  margin-bottom: 5px;
+  } 
+  .footer-text, .footer-inquiry {
+  margin: 0 auto;
+  }
+  .footer-inner dl, .footer-inquiry { 
+  font-size: 0.875rem;
+  line-height: 30px;
+  }
+  #footer .copylight {
+  padding: 0 10%;
+  }
+  /*=====Cruise SP 3  ↑===========================*/
+  .wrap {
+    overflow: hidden;
+  }
+}
+/*=========================================
+     Cruise SP4  〜375px
+==========================================*/
+@media screen and (max-width: 375px) {  
+  /*=====SP4 ヘッダー======================*/
+  .header-nav ul {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  .header-nav ul li {
+    padding: 3.5vw 3.5vw 3vw 3.5vw;
+  } 
+  .header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+    font-size: 1.3rem;
+    transform: translateY(-7px);
+  }
+/*=====Cruise SP4 トップイメージ 375px==================*/
+.top-image h1 {
+  font-size: 1.4rem;
+  padding: 30px 0;
+}
+/*=====Cruise SP4 チケット 375px=======================*/
+.ticket-outer {
+  padding: 60px 0;
+}
+.ticket-inner1, .ticket-inner2 {
+  padding: 0;
+  margin: 0 auto;
+}
+.ticket-inner1 .section-title {
+  font-size: 1.5rem;
+  padding: 0 5px 0 15px;
+}
+.ticket-content {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.ticket-inner2 {
+  margin-top: 60px;
+}
+.ticket-content dl {
+  padding: 0 5px;
+}
+.ticket-inner2 dl:nth-child(1) {
+  padding-right: 0;
+}
+.ticket-inner2 dl:nth-child(4) {
+  padding-left: 0;
+}
+/*======Cruise SP4 フッター 375px=================*/
+  #footer .footer-title {
+    font-size: 1.4rem;
+    padding: 0 0 0 10px;
+  }
+  .footer-inquiry .logo {
+    margin: 80px 10px 0 0;
+    }
+  #footer .copylight p {
+    padding: 60px 0 30px 0;
+  }
+/*=====Cruise SP4  ↑===========================*/
+  .wrap {
+  overflow: hidden;
+  }
+}
