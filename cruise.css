@@ -68,7 +68,9 @@ nav, ul, li {
 .header-nav ul li {
   padding: 1.5vw 1.5vw 1vw 1.5vw;
 }
-.header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+.header-nav ul li:nth-child(1),
+.header-nav ul li:nth-child(3), 
+.header-nav ul li:nth-child(5) {
   font-size: 1.8rem;
   transform: translateY(-10px);
 }
@@ -321,7 +323,9 @@ nav, ul, li {
 .header-nav {
   font-size: 1.3rem;
 }
-.header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+.header-nav ul li:nth-child(1), 
+.header-nav ul li:nth-child(3), 
+.header-nav ul li:nth-child(5) {
   font-size: 1.5rem;
 }
 /*=====Cruiseトップイメージ===========================*/
@@ -363,7 +367,9 @@ nav, ul, li {
   .header-nav ul li {
     padding: 1.8vw 1.8vw 1.2vw 1.8vw;
   } 
-  .header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+  .header-nav ul li:nth-child(1), 
+  .header-nav ul li:nth-child(3), 
+  .header-nav ul li:nth-child(5) {
     font-size: 1.4rem;
   }
   .header-btn span {
@@ -467,7 +473,9 @@ nav, ul, li {
 =============================================*/
 @media only screen and (min-device-width: 768px) and (max-device-width:1024px) and (orientation: landscape) {  
 /*=====Cruise横３ ヘッダー1024px=================*/   
-  .header-nav ul li:nth-child(1), .header-nav ul li:nth-child(3), .header-nav ul li:nth-child(6) {
+  .header-nav ul li:nth-child(1), 
+  .header-nav ul li:nth-child(3), 
+  .header-nav ul li:nth-child(5) {
     transform: translateY(-6px);
   }
 /*=====Cruise横３　↑↑====================*/ 
